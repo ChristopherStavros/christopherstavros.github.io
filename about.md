@@ -21,3 +21,6 @@ image: /assets/img/blog/hydejack-8.png
 menu: true
 order: 4
 ---
+
+Christopher is a systems engineer with experience in scripting, automation, and systems management.  He has degrees in Music Peformance and Computer Science.  Christopher is a lifelong learner who is exploring DevOps 
+     other modern IT practices.  This blog is part of that journey.
