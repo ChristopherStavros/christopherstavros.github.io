@@ -75,93 +75,92 @@ docker COMMAND --help
 
 ***Note:*** Launching *'docker run'* or *'docker container run'* commands will **always** create a new container
 
->```powershell
-># Run container along with a command
-># These containers will be ephemeral
-># The container will stop once the command completes
->docker container run alpine:3.6 uptime
->docker container run alpine ps
->docker container run alpine uname -a
->docker container run alpine date
->docker container run --name 'mycontainer' alpine date
->
-># List containers
->docker ps       # show running containers
->docker ps -l    # show latest created container
->docker ps -n 2  # show last 'n' number of containers
->docker ps -a    # show ALL containers
->```
+```powershell
+# Run container along with a command
+# These containers will be ephemeral
+# The container will stop once the command completes
+docker container run alpine:3.6 uptime
+docker container run alpine ps
+docker container run alpine uname -a
+docker container run alpine date
+docker container run --name 'mycontainer' alpine date
+
+# List containers
+docker ps       # show running containers
+docker ps -l    # show latest created container
+docker ps -n 2  # show last 'n' number of containers
+docker ps -a    # show ALL containers
+```
 
 ## Persisting containers
 
->```powershell
-># Run interactive programs
->docker container run -it alpine sh
->docker container run -it ubuntu bash
->
-># Long running container - requires the 'd' switch as well
->docker container run -idt alpine sh
->```
+```powershell
+# Run interactive programs
+docker container run -it alpine sh
+docker container run -it ubuntu bash
+
+# Long running container - requires the 'd' switch as well
+docker container run -idt alpine sh
+```
 
 ## Mounting Local Volumes in a container
 
->```powershell
-># Use -v to mount a volume
->docker container run --name repos -it -v c:/_repositories:/repositories alpine sh
->```
+```powershell
+# Use -v to mount a volume
+docker container run --name repos -it -v c:/_repositories:/repositories alpine sh
+```
 
 ## Operations on containers
 
 ***Note:*** Refer to containers using name or (full or partial) ID
 
->```powershell
-># rename a container
->docker rename sharp_jones mycontainer
->
-># Logs - view current activity
->docker logs mycontainer
->docker logs mycontainer -f # constant update
->
-># Run commands inside a container
->docker exec mycontainer uptime
->docker exec mycontainer ps
->docker exec mycontainer la -la
->docker exec mycontainer apk update
->docker exec mycontainer apk add python3
->docker exec mycontainer apk add vim
->
-># Connect to running container and run program
->docker exec -it mycontainer sh
->docker exec -it mycontainer python3
->
-># Detailed infornamtion about a container
->docker inspect mycontainer # Returns JSON data -- file is stored in container - >"LogPath"
->
-># Copy file into container
->docker container cp test.py mycontainer:/home
->
-># Interact with copied file
->docker exec mycontainer python3 /home/test.py
->
-># Stop container gracefully (if this doesn't work a kill command will be sent)
-># Can pass multiple containers - separated by a space
->docker stop mycontainer
->
-># Start a stopped containers
->docker start mycontainer
->
-># Remove container
-># Can pass multiple containers - separated by a space
->docker rm mycontainer # container cannot be running
->docker rm mycontainer -f # remove even if running
->```
+```powershell
+# rename a container
+docker rename sharp_jones mycontainer
+
+# Logs - view current activity
+docker logs mycontainer
+docker logs mycontainer -f # constant update
+
+# Run commands inside a container
+docker exec mycontainer uptime
+docker exec mycontainer ps
+docker exec mycontainer la -la
+docker exec mycontainer apk update
+docker exec mycontainer apk add python3
+docker exec mycontainer apk add vim
+
+# Connect to running container and run program
+docker exec -it mycontainer sh
+docker exec -it mycontainer python3
+
+# Detailed infornamtion about a container
+docker inspect mycontainer # Returns JSON data -- file is tored in container - >"LogPath"
+
+# Copy file into container
+docker container cp test.py mycontainer:/home
+
+# Interact with copied file
+docker exec mycontainer python3 /home/test.py
+
+# Stop container gracefully (if this doesn't work a kill ommand will be sent)
+# Can pass multiple containers - separated by a space
+docker stop mycontainer
+
+# Start a stopped containers
+docker start mycontainer
+
+# Remove container
+# Can pass multiple containers - separated by a space
+docker rm mycontainer # container cannot be running
+docker rm mycontainer -f # remove even if running
+```
 
 ## Access applications from outside
 
 ***Note:*** [nginx](https://hub.docker.com/_/nginx) is a web server image on [Docker Hub](https://hub.docker.com/)
 
 ```powershell
-
 # Run nginx web server and map ports using -P (uppercase P)
 docker container run --name 'mywebserver' -idt -P nginx
 
@@ -230,6 +229,8 @@ docker start dev-ubuntu
 
 ## Use [Portainer](https://www.portainer.io/) to Manage Docker Environments
 
+![Portainer](/assets/img/blog/Docker1/Portainer_1.jpg)
+
 ### Installation
 
 ```powershell
@@ -245,9 +246,6 @@ Browse to [http://localhost:9000](http://localhost:9000) to access the Portainer
 - **Manage containers -** add, remove, connect to console, monitor
 - Catalog of App Templates for one-click deployments
 - Connect to multiple instances of remove Docker servers
-
-
-![Portainer](/assets/img/blog/Docker1/Portainer_1.jpg)
 
 ## Docker Compose
 
