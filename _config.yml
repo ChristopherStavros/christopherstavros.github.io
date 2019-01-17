@@ -74,8 +74,8 @@ accent_color:          rgb(79,177,186)
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-theme_color:           rgb(25,55,71)
-
+#theme_color:           rgb(25,55,71)
+theme_color:           rgb(0,0,0)
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
 google_fonts:          Roboto+Slab:400|Noto+Sans:400,400i,700,700i
@@ -129,6 +129,9 @@ defaults:
 # These settings are specific to Hydejack.
 
 hydejack:
+  dark_mode:
+    # Set to `true` to always use the dark theme.
+  always:            true
   # Configure the order of complementary content on blog posts
   post_addons:         [about, newsletter, related]
 
