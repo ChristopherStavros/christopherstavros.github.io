@@ -68,9 +68,10 @@ paginate_path:         /page-:num/
 # ========================================================================================
 
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/site/Canva - Juggle, Marbles, Throw, Hand, Black And White.jpg
-#accent_color:          rgb(79,177,186)
-accent_color:          rgb(141,100,120)
+accent_image:          /assets/img/site/purple_marbles.jpg
+#accent_color:          rgb(79,177,186) #green/blue
+#accent_color:          rgb(141,100,120) # mid/dark purple
+accent_color:          rgb(217,88,255) #light purple
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
