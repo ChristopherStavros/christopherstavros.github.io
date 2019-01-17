@@ -1,8 +1,10 @@
 // You can add CSS rules here that will be inlucded in Hydejack's CSS file
-
+body{
+    margin:0;
+}
 code {
     background-color: rgb(184, 204, 168);
     border-radius: 20px;
-    margin-left:10px;
+    margin-left:0;
     margin-bottom:0;
 }
