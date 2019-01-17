@@ -29,11 +29,11 @@ pre, table:not(.highlight), .katex-display, .break-layout {
 .pre-base, pre, article .katex-display, article div.MathJax_Preview {
     margin-left: -1rem;
     margin-right: -1rem;
-    padding: 1rem;
+    padding: 1rem; 
     background-color: 000;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    backface-visibility: hidden;
+    //backface-visibility: hidden;
 }
 code, pre {
     font-family: var(--code-font-family);
