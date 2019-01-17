@@ -3,15 +3,14 @@
 # You can change `author1` to your shortname.
 author1:
   # Replace <...> with your own (remove the < >)
-  name:              <firstname> <lastname>
-  email:             <mail@domain.tld>
+  name:              Christopher Stavros Kurkoski
+  email:             christopher.kurkoski@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Christopher is a systems engineer with experience in scripting, automation, and systems management.  He has degrees in Music Peformance and Computer Science.  Christopher is a lifelong learner who is exploring DevOps 
+     other modern IT practices.  This blog is part of that journey.
 
     Open `_data/authors.yml` to edit this text.
 
@@ -58,7 +57,7 @@ author1:
     # npm:             <username>
     # hackernews:      <username>
     # trello:          <firstnamelastname>
-    # linkedin:        <firstname-lastname-string>
+    linkedin:        christopher-stavros-kurkoski-b693864a
     # xing:            <firstname_lastname_counter>
     # blogger:         <number>
     # delicious:       <username>

@@ -1,7 +1,7 @@
 ---
 layout: list
-title: Blog
-slug: Blog
+title: Tech Blog
+slug: Tech Blog
 menu: true
 order: 1
 description: >
