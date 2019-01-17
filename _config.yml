@@ -24,22 +24,22 @@ title:                 ChristopherStavros
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  I like to juggle.
+  IA blog
 
 # A shorter description for the sidebar.
 tagline:               >
-  I like to **juggle**.
+  If this blog is about any one thing, it's about...**stuff**
 
 # A list of keywords for your blog.
 keywords:              []
 
 # Used by jekyll-seo-tag.
-logo:                  /assets/icons/icon.png
+logo:                  /assets/img/site/icon.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <firstname> <lastname>
+  name:                Christopher Stavros
   email:               <mail@domain.tld>
   # Used by `jekyll-seo-tag`:
   # twitter:             <username>
