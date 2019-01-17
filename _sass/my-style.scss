@@ -8,3 +8,34 @@ pre {
     margin:0;
 
 }
+pre, table:not(.highlight), .katex-display, .break-layout {
+    width: calc(100% + 100vw - 72rem);
+}
+pre, table:not(.highlight), .katex-display, .break-layout {
+    width: calc(100% + 100vw - 65rem);
+}
+pre, table:not(.highlight), .katex-display, .break-layout {
+    width: calc(100vw - 25rem);
+}
+pre, table:not(.highlight), .katex-display, .break-layout {
+    width: calc(100% + 50vw - 20rem);
+}
+pre, table:not(.highlight), .katex-display, .break-layout {
+    width: calc(100% + 50vw - 18rem);
+}
+pre, table:not(.highlight), .katex-display, .break-layout {
+    position: relative;
+    width: calc(100% + 1rem);
+}
+.pre-base, pre, article .katex-display, article div.MathJax_Preview {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1rem;
+    background-color: var(--gray-bg);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    backface-visibility: hidden;
+}
+code, pre {
+    font-family: var(--code-font-family);
+}
