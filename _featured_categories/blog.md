@@ -6,11 +6,11 @@ layout: list
 title: Blog
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: Blog
+slug: blog
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  Blog posts
+  Blog posts.
 
 # Setting `menu` will generate an entry in the sidebar for this tag.
 menu: true
