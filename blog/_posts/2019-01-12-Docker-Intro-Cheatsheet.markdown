@@ -24,9 +24,9 @@ Instructions for installing Docker on a particular OS are on [Docker Docs](https
 
 ***Note:*** When using Docker for Windows with Hyper-V, a base VM will be created in the follwoing location.
 
-    ```powershell
-    C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks\MobyLinuxVM.vhdx
-    ```
+>```powershell
+>C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks\MobyLinuxVM.vhdx
+>```
 
 ## Basic informational commands
 
