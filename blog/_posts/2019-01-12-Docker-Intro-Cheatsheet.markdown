@@ -24,35 +24,35 @@ Instructions for installing Docker on a particular OS are on [Docker Docs](https
 
 ***Note:*** When using Docker for Windows with Hyper-V, a base VM will be created in the follwoing location.
 
->```powershell
->C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks\MobyLinuxVM.vhdx
->```
+```powershell
+C:\Users\Public\Documents\Hyper-V\Virtual Hard isks\MobyLinuxVM.vhdx
+```
 
 ## Basic informational commands
 
 ***Note:*** Run Docker commands using PowerShell or Linux shell
 
->```powershell
-># Run sample application - Smoke-test
->docker run hello-world
->
-># Client and server version
->docker version
->
-># Client version
->docker -v
->
-># Info about the Docker daemon (engine)
->docker system info
->
-># Stream events running in Docker daemon
-># You can run this in a separate shell to monitor live events
->docker system events
->
-># Help
->docker
->docker COMMAND --help
->```
+```powershell
+# Run sample application - Smoke-test
+docker run hello-world
+
+# Client and server version
+docker version
+
+# Client version
+docker -v
+
+# Info about the Docker daemon (engine)
+docker system info
+
+# Stream events running in Docker daemon
+# You can run this in a separate shell to monitor live vents
+docker system events
+
+# Help
+docker
+docker COMMAND --help
+```
 
 ## Docker Hub
 
