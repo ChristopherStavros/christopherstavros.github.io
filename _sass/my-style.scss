@@ -3,7 +3,6 @@ h1, h2, h3 {
     margin-top: 5px;
 }
 pre {
-    background-color: rgb(0, 0, 0);
     border-radius: 20px;
     margin:0;
 
@@ -31,7 +30,7 @@ pre, table:not(.highlight), .katex-display, .break-layout {
     margin-left: -1rem;
     margin-right: -1rem;
     padding: 1rem;
-    background-color: var(--gray-bg);
+    background-color: var(--pure-black);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     backface-visibility: hidden;
