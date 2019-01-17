@@ -2,7 +2,7 @@
 layout: post
 title:  "A few VS Code Tips"
 date:   2018-09-24 12:42:30 -0500
-categories: Blog
+categories: blog
 author: Stavros
 ---
 For those who are new to Visual Studio Code, here are some tips that I hope you will find helpful.

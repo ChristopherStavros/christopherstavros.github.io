@@ -2,7 +2,7 @@
 layout: post
 title:  "Basic Docker Intro"
 date:   2019-01-14 12:42:30 -0501
-categories: Blog
+categories: blog
 author: Stavros
 ---
 
