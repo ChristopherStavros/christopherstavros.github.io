@@ -56,7 +56,7 @@ For those who are new to Visual Studio Code, here are some tips that I hope you 
 
 Install the PowerShell extension from the Marketplace
 
-![PowerShell](/images/VS-CODE-SHORTCUTS/PowerShell.PNG)
+![PowerShell](/assets/img/blog/Vscode1/PowerShell.PNG)
 
 ###  Run Selection
 
@@ -66,16 +66,16 @@ Install the PowerShell extension from the Marketplace
 
 Install the Code Runner extension from the Marketplace
 
-![CodeRunnerExtension](/images/VS-CODE-SHORTCUTS/CodeRunner.PNG)
+![CodeRunnerExtension](/assets/img/blog/Vscode1/CodeRunner.PNG)
 
 From the settings page, check the 'Code-Runner: Run In Terminal' checkbox so that your script will execute in the PowerShell terminal window.
 
-![CodeRunnerRunInTerminal](/images/VS-CODE-SHORTCUTS/CodeRunnerRunInTerminal.PNG)
+![CodeRunnerRunInTerminal](/assets/img/blog/Vscode1/CodeRunnerRunInTerminal.PNG)
 
 Press the play button (top right corner of the editor window) to run a full script.  
 (*One thing to note here is that, unlike the PowerShell ISE, **sadly** there is no stop button.*)
 
-![CodeRunnerPlay](/images/VS-CODE-SHORTCUTS/CodeRunnerPlay.PNG)
+![CodeRunnerPlay](/assets/img/blog/Vscode1/CodeRunnerPlay.PNG)
 
 ## Game day bucket go boom
 
