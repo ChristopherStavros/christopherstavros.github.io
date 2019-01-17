@@ -130,9 +130,6 @@ defaults:
 # These settings are specific to Hydejack.
 
 hydejack:
-  dark_mode:
-    # Set to `true` to always use the dark theme.
-  always:            true
   # Configure the order of complementary content on blog posts
   post_addons:         [about, newsletter, related]
 
