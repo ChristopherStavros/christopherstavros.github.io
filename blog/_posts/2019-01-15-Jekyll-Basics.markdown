@@ -8,6 +8,12 @@ author: Stavros
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
+{% if page.content contains "code" %}
+<script>
+<!-- clipboard.js code -->
+</script>
+{% endif %}
+
 <script>
     // get all <code> elements
 var allCodeBlocksElements = $( "code" );
@@ -44,6 +50,7 @@ Jekyll can be installed locally or in a docker container and you can easily host
 # On system with Ruby installed
 gem install jekyll bundler
 ```
+{: #code-example-1}
 
 ## Jekyll in a Docker container
 
