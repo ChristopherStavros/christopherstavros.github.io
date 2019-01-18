@@ -4,7 +4,6 @@ h1, h2, h3 {
 }
 pre {
     border-radius: 20px;
-    margin:20px;
 }
 pre, table:not(.highlight), .katex-display, .break-layout {
     width: calc(100% + 100vw - 72rem);
@@ -26,8 +25,8 @@ pre, table:not(.highlight), .katex-display, .break-layout {
     width: calc(100% + 1rem);
 }
 .pre-base, pre, article .katex-display, article div.MathJax_Preview {
-    margin-left: -1rem;
-    margin-right: -1rem;
+    //margin-left: -1rem;
+    //margin-right: -1rem;
     padding: 1rem; 
     background-color: #000;
     overflow-x: auto;
