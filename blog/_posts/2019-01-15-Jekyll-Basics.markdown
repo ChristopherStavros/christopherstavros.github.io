@@ -13,6 +13,7 @@ Jekyll can be installed locally or in a docker container and you can easily host
 
 - [Jekyll site](https://jekyllrb.com)
 - [Themes](https://rubygems.org/)
+- [Step by Step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
 
 ## Local Installation
 
@@ -22,6 +23,7 @@ Jekyll can be installed locally or in a docker container and you can easily host
 # On system with Ruby installed
 gem install jekyll bundler
 ```
+{: #code-example-1}
 
 ## Jekyll in a Docker container
 
@@ -52,8 +54,11 @@ bundle exec jekyll serve --host 0.0.0.0
 
 CTRL C
 
-## Sources
+## Additional resources
 
-- https://jekyllrb.com
-- https://davemateer.com/2018/01/25/Jekyll-and-Docker
-- https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
+- [Jekyll Homepage](https://jekyllrb.com)
+- [Step by Step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
+- [Jekyll and Docker - blog-post](Jekyll-and-Docker)
+- [Docker, Windows, and 0.0.0.0 - blog-post](https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/)
+- [Jekyll Assets Documentation](https://github.com/envygeeks/jekyll-assets/blob/master/README.md)
+- [Adding a code snippet copy button - Stack Overflow](https://stackoverflow.com/questions/48078199/jekyll-code-snippet-copy-to-clipboard-button)
