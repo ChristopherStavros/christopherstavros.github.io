@@ -4,8 +4,7 @@ h1, h2, h3 {
 }
 pre {
     border-radius: 20px;
-    margin:0;
-
+    margin:20px;
 }
 pre, table:not(.highlight), .katex-display, .break-layout {
     width: calc(100% + 100vw - 72rem);
