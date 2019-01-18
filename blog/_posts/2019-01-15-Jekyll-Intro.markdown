@@ -56,10 +56,7 @@ CTRL C
 
 ## Additional resources
 
-- [Jekyll Homepage](https://jekyllrb.com)
-- [Step by Step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
 - [Jekyll and Docker](Jekyll-and-Docker)
 - [Docker, Windows, and 0.0.0.0](https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/)
 - [Jekyll Assets Documentation](https://github.com/envygeeks/jekyll-assets/blob/master/README.md)
-- [Adding a code snippet copy button](https://stackoverflow.com/questions/48078199/jekyll-code-snippet-copy-to-clipboard-button)
 - [Introduction to Jekyll Assets](http://ixti.net/software/2012/12/30/unleash-mr-hyde-introduction-of-jekyll-assets.html)
