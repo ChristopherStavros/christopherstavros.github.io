@@ -5,15 +5,16 @@ date:   2019-01-15 12:42:30 -0501
 categories: blog
 author: Stavros
 ---
-Jekyll is a static website bulder that allows you to build blogs and other sorts of static sites, primarily using markdown.
+Jekyll is a static website generator that allows you to build blogs and other sorts of static sites, primarily using markdown.
 
-Jekyll can be installed locally or in a docker container and you can easily host your site using Github Pages.
+Jekyll can be installed locally or in a docker container and you can easily host your site using [Github Pages](https://pages.github.com/).
 
 ## Resources
 
 - [Jekyll site](https://jekyllrb.com)
 - [Themes](https://rubygems.org/)
-- [Step by Step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
+- [Official Step by Step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
+- [Tutorial - Mike Dane](https://www.mikedane.com/static-site-generators/jekyll/)
 
 ## Local Installation
 
