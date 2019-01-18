@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Basic Docker Intro"
+title:  "Introduction to Docker"
 date:   2019-01-14 12:42:30 -0501
 categories: blog
 author: Stavros
 ---
+This post is intended as a Docker quick-start guide.
 
-This post is intended as a Docker quick-start guide.  **DISCLAMER**: Much of the content below is derived from the following resources:
+**DISCLAMER**: Much of the content in the post was derived from the following resource:
 
-- [Just Enough Docker to be Dangerous - Free Udemy Course](https://www.udemy.com/just-enough-docker/)
 - [School of Devops](https://www.schoolofdevops.net/)
 
 ## Resources
@@ -16,7 +16,17 @@ This post is intended as a Docker quick-start guide.  **DISCLAMER**: Much of the
 - [Official Docs](https://docs.docker.com)
 - [Lab](https://labs.play-with-docker.com/)
 - [Docker Hub](https://hub.docker.com/)
+- [Docker Trusted Registry (DTR)](https://docs.docker.com/ee/dtr/)
 - [Portainer](https://www.portainer.io/)
+- [runC](https://github.com/opencontainers/runc)
+- [Union files systems](https://www.terriblecode.com/blog/how-docker-images-work-union-file-systems-for-dummies/)
+- [Docker file system demystified](https://medium.com/@nagarwal/docker-containers-filesystem-demystified-b6ed8112a04a)
+
+## Super High Level Mechanics
+
+The Docker engine sits on top of the Linux kernel and it translates "Docker" commands into systems call that leverage Linux utilities and features such as cgroups, namespaces, and netlink.
+
+Docker containers mount read only images and leverage a "union file system", allowing containers to load far more quickly and efficiently than full VMs.
 
 ## Installation
 

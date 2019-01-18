@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Basic Jekyll Intro"
+title:  "Introduction to Jekyll"
 date:   2019-01-15 12:42:30 -0501
 categories: blog
 author: Stavros
