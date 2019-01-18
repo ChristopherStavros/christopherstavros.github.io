@@ -27,6 +27,8 @@ pre, table:not(.highlight), .katex-display, .break-layout {
 .pre-base, pre, article .katex-display, article div.MathJax_Preview {
     //margin-left: -1rem;
     //margin-right: -1rem;
+    margin-left: 0;
+    margin-right: 0;
     padding: 1rem; 
     background-color: #000;
     overflow-x: auto;
