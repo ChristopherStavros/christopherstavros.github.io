@@ -26,8 +26,8 @@ gem install jekyll bundler
 ## Jekyll in a Docker container
 
 ```powershell
-# Example, this time mapping port 4000 in the container to 4001 on localhost
-docker container run -idt --name "Jekyll" -v C:\_Jekyll_Local\:/Jekyll -p 4001:4000 jekyll/jekyll bash
+# Example, this time mapping port 4000 in the container to 5000 on localhost
+docker container run -idt --name "Jekyll" -v C:\_Jekyll_Local\:/Jekyll -p 500:4000 jekyll/jekyll bash
 ```
 ## Create new site
 
@@ -35,19 +35,25 @@ docker container run -idt --name "Jekyll" -v C:\_Jekyll_Local\:/Jekyll -p 4001:4
 jekyll new myblog
 ```
 
-## Build site and make it avalable on local server at 
-
-### URL = http://localhost:4000
+## Host site at http://localhost:4000 (or custom port, if specified)
 
 ```powershell
 cd myblog
 bundle exec jekyll serve
 ```
 
+**NOTE** - The additional switch ```--host 0.0.0.0```, is required when hosting a site from a Docker container in order to make the URL available on the local machine
+
+
+```powershell
+bundle exec jekyll serve --host 0.0.0.0
+```
 ## Stop server
 
 CTRL C
 
-## Additional Resources
+## Sources
 
-https://davemateer.com/2018/01/25/Jekyll-and-Docker
+- https://jekyllrb.com
+- https://davemateer.com/2018/01/25/Jekyll-and-Docker
+- https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
