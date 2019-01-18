@@ -27,6 +27,7 @@ Docker containers are runtime instances which leverage Docker images.  (Containe
 
 Docker containers mount read only images and leverage a "union file system", allowing containers to load far more quickly and efficiently than full VMs.
 
+# Getting Started
 ## Installation
 
 Instructions for installing Docker on a particular OS are on [Docker Docs](https://docs.docker.com) site.
@@ -131,7 +132,7 @@ Commands:
   wait        Block until one or more containers stop, then print their exit codes
   ```
 
-## Basic informational commands
+### First commands
 
 ***Note:*** Run Docker commands using PowerShell or Linux shell
 
@@ -156,6 +157,7 @@ docker system events
 docker
 docker COMMAND --help
 ```
+# Working with Containers
 
 ## Docker Hub
 
@@ -301,8 +303,9 @@ cd /var/jenkins_home/secrets/
 cat initialAdminPassword
 ```
 
-## Managing images
+# Managing images
 
+## Useful commands
 Create dev environments using persistent Docker containers.
 
 ```powershell
