@@ -28,6 +28,7 @@ Docker containers are runtime instances which leverage Docker images.  (Containe
 Docker containers mount read only images and leverage a "union file system", allowing containers to load far more quickly and efficiently than full VMs.
 
 # Getting Started
+
 ## Installation
 
 Instructions for installing Docker on a particular OS are on [Docker Docs](https://docs.docker.com) site.
