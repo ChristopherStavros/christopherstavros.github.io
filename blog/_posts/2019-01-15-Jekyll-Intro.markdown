@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Jekyll"
+title:  "Basic Jekyll Intro"
 date:   2019-01-15 12:42:30 -0501
 categories: blog
 author: Stavros
@@ -25,12 +25,16 @@ Jekyll can be installed locally or in a docker container and you can easily host
 gem install jekyll bundler
 ```
 
-## Jekyll in a Docker container
+## Running Jekyll in a Docker container
 
 ```powershell
 # Example, this time mapping port 4000 in the container to 5000 on localhost
 docker container run -idt --name "Jekyll" -v C:\_Jekyll_Local\:/jekyll -p 5000:4000 jekyll/jekyll bash
 ```
+
+## Using Github Pages Dccker image rather than jekyll/jekyll
+
+
 ## Create new site
 
 ```powershell
@@ -60,3 +64,5 @@ CTRL C
 - [Docker, Windows, and 0.0.0.0](https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/)
 - [Jekyll Assets Documentation](https://github.com/envygeeks/jekyll-assets/blob/master/README.md)
 - [Introduction to Jekyll Assets](http://ixti.net/software/2012/12/30/unleash-mr-hyde-introduction-of-jekyll-assets.html)
+- [A Very Jekyll Cool Theme](https://github.com/sebagomez/Jalpc)
+- [Buttons](https://stackoverflow.com/questions/40688633/how-can-i-add-a-button-in-a-md-file-with-jekyll)

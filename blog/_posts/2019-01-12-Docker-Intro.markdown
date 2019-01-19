@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Docker"
+title:  "Basic Docker Intro"
 date:   2019-01-14 12:42:30 -0501
 categories: blog
 author: Stavros
@@ -64,13 +64,17 @@ docker -v
 docker system info
 
 # Stream events running in Docker daemon
-# You can run this in a separate shell to monitor live vents
+# You can run this in a separate shell to monitor live events
 docker system events
+```
 
-# Help
+### Getting help
+
+```powershell
 docker
 docker COMMAND --help
 ```
+
 # Working with Containers
 
 ## Docker Hub
