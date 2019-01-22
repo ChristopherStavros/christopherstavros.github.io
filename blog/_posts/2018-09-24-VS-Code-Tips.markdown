@@ -1,28 +1,23 @@
 ---
 layout: post
-title:  "A few VS Code Tips"
+title:  "Some VS Code Tips on Windows"
 date:   2018-09-24 12:42:30 -0500
 categories: blog
 author: Stavros
 ---
-For those who are new to Visual Studio Code, here are some tips that I hope you will find helpful.
+For **Windows** users who are new to Visual Studio Code, here are some tips that I hope you will find helpful.  
+
+# Resources
+
+[Full list of keyboard shortcuts for Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 # The basics
 
-### Open Command Palate
+#### Open Command Palate
 
-	CRTL + SHIFT + P
+	CRTL + SHIFT + P  or  F1
 
-### Find things
-
-	Open the Command Palate and just start typing stuff
-
-	like Theme
-	or Terminal
-	or Git
-	or whatever you are looking for
-
-### Open settings tab
+#### Open settings tab
 
 	CTRL + , 
 
@@ -30,39 +25,51 @@ For those who are new to Visual Studio Code, here are some tips that I hope you 
 
 	View -> Toggle Minimap
 
-### Open and close integrated terminal
+#### Open and close integrated terminal
 
 	CTRL + ` 
 
-### Create new integrated terminal
+#### Create new integrated terminal
 
 	CTRL + SHIFT + `
 
-### Terminal Splitting
+#### Terminal Splitting
 
 	CTRL + \
-	
-###  Zen mode (full screen)
+
+####  Zen mode (full screen code editor)
 
 	CTRL + K  and then Z
 
-###  Edit multiple items simultaneously
+#### Duplicate last line of code
+
+	SHIFT + ALT + DOWN
+	SHIFT + ALT + UP
+
+#### Add comments to multiple lines
+
+	Higlight code and press
+	CTRL + /
+
+####  Edit multiple items simultaneously
 	
 	Hold the ALT key and highlight text fields that you want to edit
-	
-# PowerShell stuff!
 
-###  Install PowerShell Extension
-
-Install the PowerShell extension from the Marketplace
-
-![PowerShell](/assets/img/blog/Vscode1/PowerShell.PNG)
-
-###  Run Selection
+####  Run Selection
 
 	Highlight code + F8
 
-###  Run full PowerShell scripts in VSCode
+#### Rename variable
+
+	F2
+
+#### Refactor
+
+	CTRL + SHIFT + r
+
+# Extensions
+
+####  Run full scripts in VSCode
 
 Install the Code Runner extension from the Marketplace
 
@@ -73,13 +80,11 @@ From the settings page, check the 'Code-Runner: Run In Terminal' checkbox so tha
 ![CodeRunnerRunInTerminal](/assets/img/blog/Vscode1/CodeRunnerRunInTerminal.PNG)
 
 Press the play button (top right corner of the editor window) to run a full script.  
-(*One thing to note here is that, unlike the PowerShell ISE, **sadly** there is no stop button.*)
 
 ![CodeRunnerPlay](/assets/img/blog/Vscode1/CodeRunnerPlay.PNG)
 
 ## Game day bucket go boom
 
 So there you have it.  My plan is to keep updating this post as I discover new things that I want to remember and share with others.
-
 
 ![Game Day Bucket Go Boom!](https://movquotes.com/wp-content/uploads/6155.jpg)
