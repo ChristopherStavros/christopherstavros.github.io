@@ -239,7 +239,7 @@ CREATE DATABASE steezcorp
 
 Very basic table
 
-```SQL
+```sql
 DROP TABLE IF EXISTS public.users;
 
 CREATE TABLE public.users (
