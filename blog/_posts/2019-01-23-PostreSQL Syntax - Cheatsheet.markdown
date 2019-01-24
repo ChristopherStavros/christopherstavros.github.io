@@ -88,7 +88,7 @@ Use LIKE for more advanced filtering
 
 #### Using underscores to denote the number of characters
 
-```SQL
+```sql
 SELECT * FROM customers
 WHERE last_name LIKE '____'  /* returns last names with 4 chars*/
 ```
