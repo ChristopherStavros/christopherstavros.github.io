@@ -1,13 +1,10 @@
-## Basic Info
-
-- Tables should store data related to one thing.  Related data should be stored in separate tables.
-- The PostgreSQL PGAdmin tool requires single quotes for strings (VS Code allows double quotes )
-- **DDL** - Data Definition Danguage
-- **DML** - Data Manipulation Language
-
-### Run query in VS Code
-
-    F5
+---
+layout: post
+title:  "PostgreSQL Syntax - Cheatsheet"
+date:   2019-01-23 12:42:30 -0501
+categories: blog
+author: Stavros
+---
 
 ## SQL - DML
 
