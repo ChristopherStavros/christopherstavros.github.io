@@ -6,6 +6,8 @@ categories: blog
 author: Stavros
 ---
 
+A quick guide to PostreSQL syntax.
+
 ## SQL - DML
 
 ### Comments
