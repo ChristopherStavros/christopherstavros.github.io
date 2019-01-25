@@ -116,14 +116,20 @@ docker ps -a    # show ALL containers
 
 ## Persisting containers
 
+```-i ``` or ```--interactive``` = Keep STDIN open even if not attached   
+```-t``` or ```--tty``` = Allocate a psuedo TTY  
+```-d``` or ```--detach``` = Run container in background and print container ID
+
 ```powershell
 # Run interactive programs
 docker container run -it alpine sh
 docker container run -it ubuntu bash
 
 # Long running container - requires the 'd' switch as well
-docker container run -idt alpine sh
+docker container run -idt ubuntu bash
 ```
+
+Run ```docker container run --help``` for more options
 
 ## Mounting Local Volumes in a container
 
@@ -277,7 +283,30 @@ Browse to [http://localhost:9000](http://localhost:9000) to access the Portainer
 - provides the ability to launch complete stack of interconnected services
 - provides automatic service discovery
 
-***Example -*** [Prometheus stack](https://github.com/vegasbrianc/prometheus)
+```docker-compose up``` to build applications per a docker-compose.yml file  
+
+### docker-compose.yml
+
+You can specify an image or a Dockerfile (using ```build: ./pathToDockerfile```)
+
+```yml
+vote:
+  image: schoolofdevops/vote
+  ports:
+    - 5000:80
+  links:
+    - redis:redis
+  
+  redis:
+    image: redis:alpine
+  
+  worker:
+    image: schoolofdevops/vote-worker
+    links:
+      - redis:redis
+```
+
+***Example -*** Run [Prometheus stack](https://github.com/vegasbrianc/prometheus)
 
 ```powershell
 # Clone repository containing docker-compose.yml file
@@ -412,3 +441,4 @@ docker image push christopherstavros/facebooc_demo:v2
 - [Union files systems](https://www.terriblecode.com/blog/how-docker-images-work-union-file-systems-for-dummies/)
 - [Docker file system demystified](https://medium.com/@nagarwal/docker-containers-filesystem-demystified-b6ed8112a04a)
 - [Codespaces](https://github.com/codespaces-io/codespaces)
+- [More on Dockerfile and Docker-compose](https://stackoverflow.com/questions/29480099/docker-compose-vs-dockerfile-which-is-better/45549372)
