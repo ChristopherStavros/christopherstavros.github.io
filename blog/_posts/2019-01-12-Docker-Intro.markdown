@@ -7,7 +7,7 @@ author: Stavros
 ---
 This post is intended as a Docker quick-start guide.
 
-**DISCLAMER**: Much of the content in the post was derived from the following resource:
+**Note**: Some of the content in the post was derived from the following resource:
 
 - [School of Devops](https://www.schoolofdevops.net/)
 
@@ -114,7 +114,7 @@ docker ps -n 2  # show last 'n' number of containers
 docker ps -a    # show ALL containers
 ```
 
-## Persisting containers
+## Making containers persist
 
 ```-i ``` or ```--interactive``` = Keep STDIN open even if not attached   
 ```-t``` or ```--tty``` = Allocate a psuedo TTY  
@@ -142,25 +142,28 @@ docker container run --name repos -it -v c:/_repositories:/repositories alpine s
 
 ***Note:*** Refer to containers using name or (full or partial) ID
 
-```powershell
-# rename a container
-docker rename sharp_jones mycontainer
+### Rename a container
 
-# Logs - view current activity
+```powershell
+docker rename sharp_jones mycontainer
+```
+
+### Logs - view current activity
+
+```powershell
 docker logs mycontainer
 docker logs mycontainer -f # constant update
+```
 
-# Run commands inside a container
+### Run commands inside a container
+
+```powershell
 docker exec mycontainer uptime
-docker exec mycontainer ps
-docker exec mycontainer la -la
 docker exec mycontainer apk update
 docker exec mycontainer apk add python3
-docker exec mycontainer apk add vim
 
 # Connect to running container and run program
 docker exec -it mycontainer sh
-docker exec -it mycontainer python3
 
 # Detailed infornamtion about a container
 docker inspect mycontainer # Returns JSON data -- file is tored in container - >"LogPath"
@@ -170,7 +173,11 @@ docker container cp test.py mycontainer:/home
 
 # Interact with copied file
 docker exec mycontainer python3 /home/test.py
+```
 
+### Starting, stopping and removing containers
+
+```powershell
 # Stop container gracefully (if this doesn't work a kill ommand will be sent)
 # Can pass multiple containers - separated by a space
 docker stop mycontainer
@@ -278,32 +285,30 @@ Browse to [http://localhost:9000](http://localhost:9000) to access the Portainer
 
 ## Docker Compose
 
+[docker-compose file reference](https://docs.docker.com/compose/compose-file/)
+
 - docker-compose.yml
 - run commands converted into code
 - provides the ability to launch complete stack of interconnected services
 - provides automatic service discovery
 
-```docker-compose up``` to build applications per a docker-compose.yml file  
+### docker-compose.yml example
 
-### docker-compose.yml
-
-You can specify an image or a Dockerfile (using ```build: ./pathToDockerfile```)
+You can specify an image (using ```image: namespace\imagename``` or a Dockerfile (using ```build: ./pathToDockerfile```)
 
 ```yml
-vote:
-  image: schoolofdevops/vote
-  ports:
-    - 5000:80
-  links:
-    - redis:redis
-  
-  redis:
-    image: redis:alpine
-  
-  worker:
-    image: schoolofdevops/vote-worker
-    links:
-      - redis:redis
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
 ```
 
 ***Example -*** Run [Prometheus stack](https://github.com/vegasbrianc/prometheus)

@@ -8,7 +8,15 @@ author: Stavros
 
 A quick guide to PostreSQL syntax.
 
-## SQL - DML
+# Resources
+
+[Official Documentation](https://www.postgresql.org/docs/10/index.html)
+
+# Some basics
+
+### Quotes
+
+- In Postgres, "double quotes" are used for names of tables and fields, while 'single quotes' are used for string constants
 
 ### Comments
 
@@ -18,7 +26,9 @@ A quick guide to PostreSQL syntax.
 -- Single line comment
 ```
 
-### SELECT
+# SQL - DML
+
+## SELECT
 
 Select all rows and columns from a table
 
@@ -33,7 +43,7 @@ SELECT id, last_name
 FROM customers
 ```
 
-### WHERE
+## WHERE
 
 Use the 'WHERE' clause to filter returned rows
 
@@ -43,7 +53,7 @@ FROM customers
 WHERE last_name='Adam' OR last_name='Watson'
 ```
 
-### AS
+## AS
 
 Give a friendly name to a column or table
 
@@ -52,7 +62,7 @@ SELECT customers.id AS "custID"
 FROM customers
 ```
 
-### LIMIT
+## LIMIT
 
 Limit the number of rows returned
 
@@ -62,7 +72,7 @@ FROM customers
 LIMIT 1;
 ```
 
-### UPDATE
+## UPDATE
 
 Update specific values
 
@@ -72,7 +82,7 @@ SET price = 4.00
 WHERE id = 3;
 ```
 
-### DELETE rows
+## DELETE rows
 
 Delete rows that meet specific criteria
 
@@ -80,20 +90,20 @@ Delete rows that meet specific criteria
 DELETE FROM items WHERE id=4;
 ```
 
-### LIKE
+## LIKE
 
 Use LIKE for more advanced filtering
 
 **NOTE:** This is taxing to the server so it should be avoided where possible
 
-#### Using underscores to denote the number of characters
+### Using underscores to denote the number of characters
 
 ```sql
 SELECT * FROM customers
 WHERE last_name LIKE '____'  /* returns last names with 4 chars*/
 ```
 
-#### Using the wildcard symbol '%'
+### Using the wildcard symbol '%'
 
 ```sql
 SELECT * FROM customers
@@ -113,7 +123,7 @@ WHERE last_name LIKE '%a%'
 /* returns last names that contain an lower case a */
 ```
 
-#### Combining wildcards and underscores
+### Combining wildcards and underscores
 
 ```sql
 SELECT * FROM customers
@@ -121,13 +131,13 @@ WHERE last_name LIKE '%t_'
 /* returns last names where 't' is the second to last character */
 ```
 
-### JOINS
+## JOINS
 
 - JOINs treat rows of data as if they were Sets
 - We can perform set operations on the tables
 - JOINs are fairly quick and do not caue a major performance hit
 
-#### INNER JOIN
+### INNER JOIN
 
 - Set intersection is the elements common to two sets
 - INNER JOIN is similar to **set intersection**
@@ -139,7 +149,7 @@ WHERE last_name LIKE '%t_'
     ON Customers.ID = Orders.Customer_ID
     ```
 
-#### LEFT JOIN
+### LEFT JOIN
 
 - This selects all rows from the table1 (on the left), and the rows from table2 (on the right) **if they match**
 - If they don't match, the data for the right table is blank
@@ -150,7 +160,7 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-#### RIGHT JOIN
+### RIGHT JOIN
 
 - Opposite of LEFT JOIN
 - This selects all rows from the table2 (on the right), and the rows from table1 (on the left) **if they match**
@@ -162,7 +172,7 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-#### FULL JOIN
+### FULL JOIN
 
 - This selects all rows from both tables, matching them if there is a match on the selected column
 
@@ -172,11 +182,11 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-### AGGREGATE FUNCTIONS
+## AGGREGATE FUNCTIONS
 
 **NOTE:** when grouping data using GROUP BY,  some columns may become obsolete as a result of the grouping, however you can still that data using aggregate functions such as COUNT or SUM
 
-#### GROUP BY and COUNT
+### GROUP BY and COUNT
 
 Count all purchases by a customer
 
@@ -192,7 +202,7 @@ LEFT JOIN purchases ON customers.id = purchases.customer_id
 GROUP BY customers.id;
 ```
 
-#### SUM
+### SUM
 
 ```sql
 SELECT customers.first_name, customers.last_name, COUNT(items.name), SUM(items.price)
@@ -208,7 +218,7 @@ FROM purchases
 INNER JOIN items ON purchases.item_id = items.id
 ```
 
-#### ORDER BY and LIMIT
+### ORDER BY and LIMIT
 
 ```sql
 SELECT customers.first_name, customers.last_name, COUNT(items.name), SUM(items.price) AS "total_spent"
@@ -220,9 +230,9 @@ ORDER BY total_spent DESC
 LIMIT 1
 ```
 
-## SQL - DDL
+# SQL - DDL
 
-### CREATE DATABASE
+## CREATE DATABASE
 
 ```sql
 CREATE DATABASE steezcorp
@@ -235,7 +245,7 @@ CREATE DATABASE steezcorp
     CONNECTION LIMIT = -1;
 ```
 
-### CREATE (and DROP) TABLE
+## CREATE (and DROP) TABLE
 
 Very basic table
 
@@ -257,7 +267,7 @@ CREATE TABLE public.users (
 )
 ```
 
-### FOREIGN KEY
+## FOREIGN KEY
 
 ```sql
 DROP TABLE IF EXISTS public.videos;
@@ -267,4 +277,16 @@ CREATE TABLE public.videos (
     user_id INTEGER REFERENCES public.users, -- FOREIGN KEY
     name CHARACTER VARYING(255) NOT NULL
 );
+```
+
+## INSERT data
+
+```sql
+INSERT INTO public.users --this works if data is inserted into ALL columns in the table
+VALUES (1, 'hans_gruber');
+
+--OR
+
+INSERT INTO public.users(id, name)
+VALUES (1, 'hans_gruber');
 ```
