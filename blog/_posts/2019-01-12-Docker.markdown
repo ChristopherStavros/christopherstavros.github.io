@@ -240,7 +240,7 @@ docker container run -itd --name ghost -p 3001:2368 ghost:alpine
 docker start ghost
 ```
 
-#### Kenkins
+#### Jenkins
 *The default port for Jenkins is 8080.*
 
 ```powershell
@@ -259,8 +259,55 @@ cat initialAdminPassword
 
 ## Linking containers
 
+**Note:** When connecting Docker containers on the same host, you do not need to expose ports to the outside.  The Docker daemon has a built in DNS service and containers will appear on the same subnet, allowing the containers to communicate with each other.
+
 ```powershell
 docker container run -idt --name redis redis:alpine
+```
+
+Link another container using the ```--link ``` switch (syntax = ```--link containerToLink:alias```)
+
+```powershell
+docker container run -idt --name vote --link redis:redis -P schoolofdevops/vote
+```
+
+### Some interesting items with linked containers
+
+```powershell
+/app # cat /etc/hosts
+
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.17.0.3      redis a0d5fcd581e7
+172.17.0.2      2fd527d2add3
+
+/app # env | grep -i redis
+
+REDIS_PORT=tcp://172.17.0.3:6379
+REDIS_PORT_6379_TCP_ADDR=172.17.0.3
+REDIS_NAME=/vote/redis
+REDIS_PORT_6379_TCP_PORT=6379
+REDIS_PORT_6379_TCP_PROTO=tcp
+REDIS_ENV_REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-5.0.3.tar.gz
+REDIS_ENV_REDIS_VERSION=5.0.3
+REDIS_PORT_6379_TCP=tcp://172.17.0.3:6379
+REDIS_ENV_REDIS_DOWNLOAD_SHA=e290b4ddf817b26254a74d5d564095b11f9cd20d8f165459efa53eb63cd93e02
+
+/app # env | grep -i redis
+
+REDIS_PORT=tcp://172.17.0.3:6379
+REDIS_PORT_6379_TCP_ADDR=172.17.0.3
+REDIS_NAME=/vote/redis
+REDIS_PORT_6379_TCP_PORT=6379
+REDIS_PORT_6379_TCP_PROTO=tcp
+REDIS_ENV_REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-5.0.3.tar.gz
+REDIS_ENV_REDIS_VERSION=5.0.3
+REDIS_PORT_6379_TCP=tcp://172.17.0.3:6379
+REDIS_ENV_REDIS_DOWNLOAD_SHA=e290b4ddf817b26254a74d5d564095b11f9cd20d8f165459efa53eb63cd93e02
 ```
 
 # Managing images
@@ -298,16 +345,40 @@ Browse to [http://localhost:9000](http://localhost:9000) to access the Portainer
 
 ## Docker Compose
 
-[docker-compose file reference](https://docs.docker.com/compose/compose-file/)
+[Docker-compose v3 - file reference](https://docs.docker.com/compose/compose-file/)
 
-- docker-compose.yml
+- **docker-compose.yml**
 - run commands converted into code
 - provides the ability to launch complete stack of interconnected services
 - provides automatic service discovery
+- You can specify an image (using ```image: namespace\imagename``` or a Dockerfile (using ```build: ./pathToDockerfile```)
 
-### docker-compose.yml example
+### Example - single application using a Dockerfile
 
-You can specify an image (using ```image: namespace\imagename``` or a Dockerfile (using ```build: ./pathToDockerfile```)
+### Example - 3 microservices 
+
+Compose file (V1) - docker-compose.yml
+
+```yml
+vote:
+  image: schoolofdevops/vote
+  ports:
+    - 5000:80
+    - 2202:22
+  links:
+    - redis:redis
+    - worker:worker
+
+redis:
+  image : redis:alpine
+
+worker:
+  image: schoolofdevops/vote-worker
+  links:
+    - redis:redis
+```
+
+Compose file (V3) - docker-compose.yml
 
 ```yml
 version: "3"
@@ -324,16 +395,9 @@ services:
       sh -c "python manage.py runserver 0.0.0.0:8000"
 ```
 
-***Example -*** Run [Prometheus stack](https://github.com/vegasbrianc/prometheus)
+### Launch application stack from folder containing docker-compose.yml and application files
 
 ```powershell
-# Clone repository containing docker-compose.yml file
-git clone https://github.com/vegasbrianc/prometheus.git
-
-# Browse to folder containing docker-compose.yml and application files
-cd ./prometheus
-
-# Launch application stack
 docker-compose up -d # -d for detach mode (automaticall uses it modes)
 
 # list applications
@@ -342,71 +406,6 @@ docker-compose ps
 # Stop or remove applications
 docker-compose stop
 docker-compose down
-
-```
-
-## Build an image manually with Docker commit
-
-***Example -*** [Facebooc](https://github.com/schoolofdevops/facebooc)
-
-### Prepare the image
-
-```powershell
-# Clone example repository
-git clone https://github.com/schoolofdevops/facebooc.git
-
-# Run container per application instructions
-docker container run -idt --name fb -p 16000:16000 ubuntu bash
-
-# Install prerequisite utilities
-docker exec -it fb bash
-
-apt-get update
-apt-get install -yq build-essential make libsqlite3-dev sqlite3
-
-# Verify build utility locations
-which gcc
-which make
-
-# From host machine, copy application source files into container
-docker cp facebooc fb:/opt/
-
-# Reconnect to container
-docker exec -it fb bash
-
-# compile code
-cd /opt/facebooc
-make all
-
-# Run application
-bin/facebooc
-
-# Browse to localhost:16000 and view output
-Listening on port 16000.
-
-Sun Jan 13 18:12:23 2019 172.17.0.1 GET / 200
-Sun Jan 13 18:12:23 2019 172.17.0.1 GET /static/css/normalize.css 200
-Sun Jan 13 18:12:23 2019 172.17.0.1 GET /static/css/main.css 200
-
-# View changes that have been made to container
-docker container diff fb
-```
-
-### Commit and push the image to Docker Hub
-
-```powershell
-# Create an image
-docker container commit fb christopherstavros/facebooc_demo:v1
-
-# View image details
-docker image ls
-docker image history 08a9b52a0a03
-
-# Push image to Docker Hub
-docker login
-
-docker image push christopherstavros/facebooc_demo:v1
-
 ```
 
 ## User a Dockerfile to create an image
@@ -415,7 +414,6 @@ docker image push christopherstavros/facebooc_demo:v1
 
 ```dockerfile
 FROM  ubuntu
-
 
 WORKDIR /opt/facebooc
 
@@ -433,22 +431,25 @@ CMD "bin/facebooc"
 
 ```
 
-### Image build process, using Dockerfile
+## Build image from a Dockerfile
 
 ```powershell
-# Checkout branch containing Dockerfile
-cd .\facebooc\
-git checkout docker
-
-# Build image (can use 'docker build' or 'docker image build')
 # Run from project dir (containing Dockerfile)
-docker image build -t christopherstavros/facebooc_demo:v2 .
-
-# View image history
-docker image history christopherstavros/facebooc_demo:v2
+docker image build -t christopherstavros/facebooc_demo:v1 .
 
 # Push image to Docker Hub
-docker image push christopherstavros/facebooc_demo:v2
+docker image push christopherstavros/facebooc_demo:v1
+```
+
+## Commit and push the image to Docker Hub
+
+```powershell
+# Create an image
+docker container commit fb christopherstavros/facebooc_demo:v1
+
+# Push image to Docker Hub
+docker login
+docker image push christopherstavros/facebooc_demo:v1
 ```
 
 ## Additional Resources

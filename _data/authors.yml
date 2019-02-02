@@ -9,7 +9,11 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    I am an IT systems engineer and musician.  Specialties include PowerShell scripting, SCCM architecture (and co-management with Intune), SQL management, server administration, and team leadership.  I have earned degrees in Music Peformance and Computer Science.  I am a lifelong learner who is currently spending my free time exploring Python development, blogging with Jekyll, Linux administration and ethical hacking, and Devops tools and practices...while still finding the time to hang out with my wife, practice juggling, shooting baskets on a tiny hoop in my living room (I can dunk), and occasionally writing and recording music under the psudonyms Urkosk and Gnomedirty.
+    I am an IT systems engineer and musician.  Specialties include PowerShell, SCCM architecture (and co-management with Intune), 
+    Active Directory, SQL, and server administration.  I have earned degrees in Music Peformance and Computer Science.  
+    I am a lifelong learner who is currently spending my free time exploring Docker,Devops tools and practices, Python development, Linux administration, and ethical hacking, 
+    ...while still trying to find the time to hang out with my family, enjoy the great outdoors, practice juggling, 
+    shooting baskets on a tiny hoop in my living room, and occasionally writing and recording music under the pseudonyms Urkosk and Gnomedirty.
 
   # This photo will be used in the about section.
   picture:
