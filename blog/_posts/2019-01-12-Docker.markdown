@@ -162,6 +162,21 @@ docker rm mycontainer # container cannot be running
 docker rm mycontainer -f # remove even if running
 ```
 
+## [Restart behavior](https://docs.docker.com/config/containers/start-containers-automatically/)
+
+Command | Description
+--- |---
+no | Do not automatically restart the container. (the default)
+on-failure 	| Restart the container if it exits due to an error, which manifests as a non-zero exit code.
+unless-stopped 	| Restart the container unless it is explicitly stopped or Docker itself is stopped or restarted.
+always 	| Always restart the container if it stops.
+
+#### Example
+
+```bash
+$ docker container run -idt --name jenkins -P --restart always jenkins:alpine
+```
+
 ## Operations on containers
 
 ***Note:*** Refer to containers using name or (full or partial) ID
@@ -225,7 +240,6 @@ docker container run -idt -P schoolofdevops/vote
 #### Nginx (using custom port mapping)
 
 ```powershell
-# Specify custom port mapping using -p (lowercase p)
 docker container run --name 'mywebserver' -idt -p 1234:80 nginx
 ```
 
@@ -233,28 +247,7 @@ docker container run --name 'mywebserver' -idt -p 1234:80 nginx
  *The default port for ghost is is 2368.*
 
 ```powershell
-#create new container
 docker container run -itd --name ghost -p 3001:2368 ghost:alpine
-
-#start stopped container
-docker start ghost
-```
-
-#### Jenkins
-*The default port for Jenkins is 8080.*
-
-```powershell
-# Run Jenkins
-docker container run -idt --name 'Jenkins' -P jenkins/jenkins:lts-alpine
-
-# Launch sh to aquire initial password
-docker exec -it Jenkins sh
-```
-Retrieve Jenkins admin password using terminal.
-
-```sh
-cd /var/jenkins_home/secrets/
-cat initialAdminPassword
 ```
 
 ## Linking containers
