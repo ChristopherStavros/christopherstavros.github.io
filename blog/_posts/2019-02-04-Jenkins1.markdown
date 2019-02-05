@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "Starting with Jenkins, freestyle jobs, and URL based build triggers"
+date:   2019-02-04 12:42:30 -0501
+categories: blog
+author: Stavros
+---
+
+Here we will launch Jenkins using Docker, look and some initial configurations, and create some simple jobs.
+
+## Installation (using Docker)
+
+#### using default ports
+
+```bash
+$ docker container run -idt --name jenkins -P jenkins:alpine
+```
+
+#### using specific ports and reboot behavior
+
+```bash
+ docker container run -idt --name jenkins -p 32769:8080 -p 32768:50000 --restart always jenkins:alpine
+ ```
+
+## Setup
+
+### Retreive default password
+
+#### On Docker host
+
+```bash
+$ docker exec -it jenkins sh
+```
+#### In Docker container
+
+```bash
+$ cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+#### Log in to Jenkins
+
+- Copy password to clipboard
+- Browse to http://localhost:32769 (run ```docker ps``` to verify port mapping - Jenkins port is 8080)
+- Paste default password in browser window
+
+### Initial setup wizard
+
+- Install plugins (optional)
+- Create 'First admin user'
+
+### Initial configurations
+
+- Manage Jenkins
+  - Configure System
+  - Configure Global Security
+  - Manage Plugins
+
+### Create new job
+
+ - New item - Free stye project
+   - Add build command
+
+   ```bash
+   echo "Hello world"
+   sleep 10
+   ```
+   
+ - Run build
+
+### Add build trigger to job
+
+- Trigger build remotely
+    - Use the following URL to trigger build remotely: JENKINS_URL/job/Job1/build?token=TOKEN_NAME or /buildWithParameters?token=TOKEN_NAME Optionally append &cause=Cause+Text to provide text that will be included in the recorded build cause. 
+    - Create token for job
+    - Make sure the you have a user with a API token 
+        - People/select user/configure/Select API token
+
+```bash
+curl http://hansgruber:4e8c6d45ee0f83f01478637f61a1864d@192.168.1.149:32769/job/Job1/build?token=1234
+```
+
+- Build after other projects are built
+- Build periodically
+- Poll SCM
+
+
+
+
+
+
+
