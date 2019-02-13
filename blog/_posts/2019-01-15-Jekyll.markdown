@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setting up Jekyll"
+title:  "Jekyll - Setup and First Blog"
 date:   2019-01-15 12:42:30 -0501
 categories: blog
 author: Stavros
@@ -29,7 +29,7 @@ gem install jekyll bundler
 
 ```powershell
 # Example, this time mapping port 4000 in the container to 5000 on localhost
-docker container run -idt --name "Jekyll" -v ~/jekyll:/jekyll -p 5000:4000 jekyll/jekyll bash
+docker container run -idt --name "jekyll" -v ~/jekyll:/srv/jekyll -p 5000:4000 jekyll/jekyll bash
 ```
 
 ## Using Github Pages Docker image rather than jekyll/jekyll
