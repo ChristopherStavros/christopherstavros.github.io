@@ -454,3 +454,4 @@ docker image push christopherstavros/facebooc_demo:v1
 - [Docker file system demystified](https://medium.com/@nagarwal/docker-containers-filesystem-demystified-b6ed8112a04a)
 - [Codespaces](https://github.com/codespaces-io/codespaces)
 - [More on Dockerfile and Docker-compose](https://stackoverflow.com/questions/29480099/docker-compose-vs-dockerfile-which-is-better/45549372)
+- [Cheat sheet](https://www.bogotobogo.com/DevOps/Docker/Docker-Cheat-Sheet.php)

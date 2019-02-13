@@ -1,24 +1,29 @@
 ---
 layout: post
-title:  "PostgreSQL Syntax - Cheatsheet"
+title:  "PostgreSQL - DML"
 date:   2019-01-23 12:42:30 -0501
 categories: blog
 author: Stavros
 ---
 
-A quick guide to PostreSQL syntax.
+A quick guide to PostreSQL DML (Data Manipulation Language) syntax.
 
 # Resources
 
 [Official Documentation](https://www.postgresql.org/docs/10/index.html)
 
-# Some basics
+# First things
 
-### Quotes
+- Tables should store data related to one thing.  Related data should be stored in separate tables.
+- In Postgres, "double quotes" are names of tables and fields, while 'single quotes' are for string constants
+- **DDL** - Data Definition Language
+- **DML** - Data Manipulation Language
 
-- In Postgres, "double quotes" are used for names of tables and fields, while 'single quotes' are used for string constants
+### Run query in VS Code
 
-### Comments
+    F5
+
+## Comments
 
 ```sql
 /* Block comment */
@@ -26,7 +31,7 @@ A quick guide to PostreSQL syntax.
 -- Single line comment
 ```
 
-# SQL - DML
+# QUERY BASICS
 
 ## SELECT
 
@@ -72,24 +77,6 @@ FROM customers
 LIMIT 1;
 ```
 
-## UPDATE
-
-Update specific values
-
-```sql
-UPDATE items
-SET price = 4.00
-WHERE id = 3;
-```
-
-## DELETE rows
-
-Delete rows that meet specific criteria
-
-```sql
-DELETE FROM items WHERE id=4;
-```
-
 ## LIKE
 
 Use LIKE for more advanced filtering
@@ -131,13 +118,13 @@ WHERE last_name LIKE '%t_'
 /* returns last names where 't' is the second to last character */
 ```
 
-## JOINS
+# JOINS
 
 - JOINs treat rows of data as if they were Sets
 - We can perform set operations on the tables
 - JOINs are fairly quick and do not caue a major performance hit
 
-### INNER JOIN
+## INNER JOIN
 
 - Set intersection is the elements common to two sets
 - INNER JOIN is similar to **set intersection**
@@ -149,7 +136,7 @@ WHERE last_name LIKE '%t_'
     ON Customers.ID = Orders.Customer_ID
     ```
 
-### LEFT JOIN
+## LEFT JOIN
 
 - This selects all rows from the table1 (on the left), and the rows from table2 (on the right) **if they match**
 - If they don't match, the data for the right table is blank
@@ -160,7 +147,7 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-### RIGHT JOIN
+## RIGHT JOIN
 
 - Opposite of LEFT JOIN
 - This selects all rows from the table2 (on the right), and the rows from table1 (on the left) **if they match**
@@ -172,7 +159,7 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-### FULL JOIN
+## FULL JOIN
 
 - This selects all rows from both tables, matching them if there is a match on the selected column
 
@@ -182,11 +169,11 @@ WHERE last_name LIKE '%t_'
     ON Customer.ID = Orders.Customer_ID
     ```
 
-## AGGREGATE FUNCTIONS
+# AGGREGATE FUNCTIONS
 
 **NOTE:** when grouping data using GROUP BY,  some columns may become obsolete as a result of the grouping, however you can still that data using aggregate functions such as COUNT or SUM
 
-### GROUP BY and COUNT
+## GROUP BY and COUNT
 
 Count all purchases by a customer
 
@@ -202,7 +189,7 @@ LEFT JOIN purchases ON customers.id = purchases.customer_id
 GROUP BY customers.id;
 ```
 
-### SUM
+## SUM
 
 ```sql
 SELECT customers.first_name, customers.last_name, COUNT(items.name), SUM(items.price)
@@ -218,7 +205,7 @@ FROM purchases
 INNER JOIN items ON purchases.item_id = items.id
 ```
 
-### ORDER BY and LIMIT
+## ORDER BY and LIMIT
 
 ```sql
 SELECT customers.first_name, customers.last_name, COUNT(items.name), SUM(items.price) AS "total_spent"
@@ -228,65 +215,4 @@ INNER JOIN customers ON purchases.customer_id = customers.id
 GROUP BY customers.id
 ORDER BY total_spent DESC
 LIMIT 1
-```
-
-# SQL - DDL
-
-## CREATE DATABASE
-
-```sql
-CREATE DATABASE steezcorp
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'English_United States.1252'
-    LC_CTYPE = 'English_United States.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-```
-
-## CREATE (and DROP) TABLE
-
-Very basic table
-
-```sql
-DROP TABLE IF EXISTS public.users;
-
-CREATE TABLE public.users (
-    id INTEGER PRIMARY KEY,
-    name CHARACTER varying(100) NOT NULL
-)
-
--- OR
-DROP TABLE IF EXISTS public.users;
-
-CREATE TABLE public.users (
-    id INTEGER,
-    name CHARACTER varying(100) NOT NULL,
-    CONSTRAINT users_id_pkey PRIMARY KEY (id) -- users_id_pkey is just the 'name' of the constraint
-)
-```
-
-## FOREIGN KEY
-
-```sql
-DROP TABLE IF EXISTS public.videos;
-
-CREATE TABLE public.videos (
-    id INTEGER PRIMARY KEY,
-    user_id INTEGER REFERENCES public.users, -- FOREIGN KEY
-    name CHARACTER VARYING(255) NOT NULL
-);
-```
-
-## INSERT data
-
-```sql
-INSERT INTO public.users --this works if data is inserted into ALL columns in the table
-VALUES (1, 'hans_gruber');
-
---OR
-
-INSERT INTO public.users(id, name)
-VALUES (1, 'hans_gruber');
 ```
