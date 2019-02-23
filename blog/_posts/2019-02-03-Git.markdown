@@ -88,6 +88,12 @@ $ git add -A
 $ git reset
 ```
 
+### Unstage specific file
+
+```bash
+$ git rm --cached <file>
+```
+
 ### View status message
 
 ```bash
@@ -108,6 +114,12 @@ $ git commit -a --message "Added stuff" # or -m to add commit message
 
 ```bash
 $ git log
+
+# Shortened version
+$ git log --oneline
+
+# Graphical representation of commits
+$ git log --graphlog
 ```
 
 ### View unstaged edits

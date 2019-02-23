@@ -15,6 +15,10 @@ A quick guide to PostreSQL DDL (Data Definition Language) syntax.
 # CREATE DATABASE
 
 ```sql
+CREATE DATABASE steezcorp;
+```
+
+```sql
 CREATE DATABASE steezcorp
     WITH 
     OWNER = postgres
@@ -40,6 +44,15 @@ CREATE TABLE public.users (
     name CHARACTER varying(100) NOT NULL,
     CONSTRAINT users_id_pkey PRIMARY KEY (id) -- users_id_pkey is just the 'name' of the constraint
 )
+
+-- OR
+
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees(
+    id SERIAL PRIMARY KEY,
+    first_name text NOT NULL,
+    last_name text NOT NULL
+);
 ```
 
 # DROP TABLE
