@@ -6,5 +6,5 @@ categories: blog
 author: Stavros
 ---
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="assets/Map1.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="400" height="400" src="/assets/Map1.html"></iframe>
 
