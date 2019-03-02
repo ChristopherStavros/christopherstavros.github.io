@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_1f870f98f23846b9b971f877d70ed896 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_1f870f98f23846b9b971f877d70ed896" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_1f870f98f23846b9b971f877d70ed896 = L.map(
+        'map_1f870f98f23846b9b971f877d70ed896', {
+        center: [46.34885576600004, -94.20079058299996],
+        zoom: 7,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_d363284e5b0b4922896c91d81a748814 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_1f870f98f23846b9b971f877d70ed896);
+    
+            var marker_cluster_ede12ca64f334e3185a1e066fa4ef58e = L.markerClusterGroup({
+  "spiderfyDistanceMultiplier": 2
+});
+            map_1f870f98f23846b9b971f877d70ed896.addLayer(marker_cluster_ede12ca64f334e3185a1e066fa4ef58e);
+            
+    
+            var feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4 = L.featureGroup.subGroup(marker_cluster_ede12ca64f334e3185a1e066fa4ef58e);
+            feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4.addTo(map_1f870f98f23846b9b971f877d70ed896);
+            
+    
+            var circle_marker_64c742a645444fe888612b09b4cb7d80 = L.circleMarker(
+                [46.787960000000055, -92.09984999999995],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4);
+            
+    
+            var popup_eff80631534040fc81d2203d86629a8f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_5e73f8c2972a4bc5bf477613dc911473 = $(`<div id="html_5e73f8c2972a4bc5bf477613dc911473" style="width: 100.0%; height: 100.0%;">Duluth, 1</div>`)[0];
+                popup_eff80631534040fc81d2203d86629a8f.setContent(html_5e73f8c2972a4bc5bf477613dc911473);
+            
+
+            circle_marker_64c742a645444fe888612b09b4cb7d80.bindPopup(popup_eff80631534040fc81d2203d86629a8f)
+            ;
+
+            
+        
+    
+            var circle_marker_7273ce7210fb430088cefd8a13ccd2d0 = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "green",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4);
+            
+    
+            var popup_5048c04e1fda45aa9d2cf6aa51c43f8e = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_ac6c2aa21be1464eac93ebddaf3b0a54 = $(`<div id="html_ac6c2aa21be1464eac93ebddaf3b0a54" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East, 55110, 2</div>`)[0];
+                popup_5048c04e1fda45aa9d2cf6aa51c43f8e.setContent(html_ac6c2aa21be1464eac93ebddaf3b0a54);
+            
+
+            circle_marker_7273ce7210fb430088cefd8a13ccd2d0.bindPopup(popup_5048c04e1fda45aa9d2cf6aa51c43f8e)
+            ;
+
+            
+        
+    
+            var circle_marker_30218cf9d710440c883023ba6296d69a = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4);
+            
+    
+            var popup_a80b263b949d451680b5d3a980cb24b2 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1b33c9d9084d40d2bfc0c8144199352c = $(`<div id="html_1b33c9d9084d40d2bfc0c8144199352c" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East , 55110, 3</div>`)[0];
+                popup_a80b263b949d451680b5d3a980cb24b2.setContent(html_1b33c9d9084d40d2bfc0c8144199352c);
+            
+
+            circle_marker_30218cf9d710440c883023ba6296d69a.bindPopup(popup_a80b263b949d451680b5d3a980cb24b2)
+            ;
+
+            
+        
+    
+            var circle_marker_ef464b811ff14f5b88094ae663809a99 = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4);
+            
+    
+            var popup_4158e218ad83421f98113f6092412866 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_ae658885ce3043e987b78226ccb4d643 = $(`<div id="html_ae658885ce3043e987b78226ccb4d643" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East , 55110, 4</div>`)[0];
+                popup_4158e218ad83421f98113f6092412866.setContent(html_ae658885ce3043e987b78226ccb4d643);
+            
+
+            circle_marker_ef464b811ff14f5b88094ae663809a99.bindPopup(popup_4158e218ad83421f98113f6092412866)
+            ;
+
+            
+        
+    
+            var circle_marker_0ad17f490fda423790812a2fea89c097 = L.circleMarker(
+                [45.05028251543633, -93.01608],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4);
+            
+    
+            var popup_848660d8c19c496391ff907c65f03ee3 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_efd85f51bcc04106be34ca274701fad7 = $(`<div id="html_efd85f51bcc04106be34ca274701fad7" style="width: 100.0%; height: 100.0%;">2007 COunty Road E East , 55110, 5</div>`)[0];
+                popup_848660d8c19c496391ff907c65f03ee3.setContent(html_efd85f51bcc04106be34ca274701fad7);
+            
+
+            circle_marker_0ad17f490fda423790812a2fea89c097.bindPopup(popup_848660d8c19c496391ff907c65f03ee3)
+            ;
+
+            
+        
+    
+            var feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1 = L.featureGroup.subGroup(marker_cluster_ede12ca64f334e3185a1e066fa4ef58e);
+            feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1.addTo(map_1f870f98f23846b9b971f877d70ed896);
+            
+    
+            var circle_marker_ab3ceb8d36f14ec9ac6ebd060ad029dd = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1);
+            
+    
+            var popup_5fcc496dd4524a74893e2a2f84a3f23f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_330160b89cbc4934be70c1e72647f4b7 = $(`<div id="html_330160b89cbc4934be70c1e72647f4b7" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East, 55110, 1</div>`)[0];
+                popup_5fcc496dd4524a74893e2a2f84a3f23f.setContent(html_330160b89cbc4934be70c1e72647f4b7);
+            
+
+            circle_marker_ab3ceb8d36f14ec9ac6ebd060ad029dd.bindPopup(popup_5fcc496dd4524a74893e2a2f84a3f23f)
+            ;
+
+            
+        
+    
+            var circle_marker_24ccdb344e0c45dd87ae237928c8b965 = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "green",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1);
+            
+    
+            var popup_7337ba29b7de4fef930c8c72ee09f487 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_54feb3aa812442b3940b84b6bac8a94d = $(`<div id="html_54feb3aa812442b3940b84b6bac8a94d" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East , 55110, 2</div>`)[0];
+                popup_7337ba29b7de4fef930c8c72ee09f487.setContent(html_54feb3aa812442b3940b84b6bac8a94d);
+            
+
+            circle_marker_24ccdb344e0c45dd87ae237928c8b965.bindPopup(popup_7337ba29b7de4fef930c8c72ee09f487)
+            ;
+
+            
+        
+    
+            var circle_marker_87b61b3425e84474b6c0f596d0e750e7 = L.circleMarker(
+                [45.05027448990112, -93.01133313918865],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1);
+            
+    
+            var popup_8442089592be439ba4f61d118668a619 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_4d6c0096dbaf4886a63a9792badd7689 = $(`<div id="html_4d6c0096dbaf4886a63a9792badd7689" style="width: 100.0%; height: 100.0%;">2113 COunty Road E East , 55110, 3</div>`)[0];
+                popup_8442089592be439ba4f61d118668a619.setContent(html_4d6c0096dbaf4886a63a9792badd7689);
+            
+
+            circle_marker_87b61b3425e84474b6c0f596d0e750e7.bindPopup(popup_8442089592be439ba4f61d118668a619)
+            ;
+
+            
+        
+    
+            var circle_marker_50c9bc71c07f45c3bdcb9a9b07540a99 = L.circleMarker(
+                [45.05028251543633, -93.01608],
+                {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "black",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 7,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1);
+            
+    
+            var popup_03a915105a23420bbe8b910f7fa09178 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_53b341bf0f0b4aea974dc92ad3321e9a = $(`<div id="html_53b341bf0f0b4aea974dc92ad3321e9a" style="width: 100.0%; height: 100.0%;">2007 COunty Road E East , 55110, 4</div>`)[0];
+                popup_03a915105a23420bbe8b910f7fa09178.setContent(html_53b341bf0f0b4aea974dc92ad3321e9a);
+            
+
+            circle_marker_50c9bc71c07f45c3bdcb9a9b07540a99.bindPopup(popup_03a915105a23420bbe8b910f7fa09178)
+            ;
+
+            
+        
+    
+            var layer_control_a1a9359b4c2542a3821fdf6d299d76bf = {
+                base_layers : { "openstreetmap" : tile_layer_d363284e5b0b4922896c91d81a748814, },
+                overlays : { "g1" : feature_group_sub_group_518e38f3ffa14d6b81bcb3c2d42fdba4,"g2" : feature_group_sub_group_5babb9bacfd64e9db0e216a574c5f1b1, }
+                };
+            L.control.layers(
+                layer_control_a1a9359b4c2542a3821fdf6d299d76bf.base_layers,
+                layer_control_a1a9359b4c2542a3821fdf6d299d76bf.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_1f870f98f23846b9b971f877d70ed896);
+            
+        
+</script>
